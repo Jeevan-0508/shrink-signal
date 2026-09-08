@@ -190,4 +190,114 @@ new Chart(el('peers'), {
   },
 });
 
-window.SHRINK = { data, drawTable, drawBars };
+// ------------------------------------------- Germany, from the national statistic
+// A second dataset from a second authority, kept in its own panel. Nothing here
+// touches data/crime.json and no value from one is ever placed on a chart with a
+// value from the other.
+const de = await fetch('data/germany.json').then((r) => r.json());
+const dm = de.meta;
+const SHOP = '*26*00';
+
+el('bkaprov').textContent = 'Source: ' + dm.source + ', reporting year ' + dm.reporting_year +
+  ' · ' + dm.versions.national_time_series + ' (national), ' + dm.versions.laender_table + ' (Bundesländer)' +
+  ' · rate is the Häufigkeitszahl, cases per 100,000 inhabitants';
+el('bkacite').textContent = 'Germany panel: ' + dm.source + ', ' + dm.reporting_year + '. ' +
+  dm.versions.national_time_series + ', ' + dm.versions.laender_table + '. ' + dm.reuse_terms;
+
+el('bkalimits').innerHTML = de.limits.map((t) => '<li>' + t + '</li>').join('');
+
+const shop = de.national[SHOP];
+const shopNow = shop[shop.length - 1];
+const shopPrev = shop[shop.length - 2];
+const shopMove = 100 * (shopNow.per100k - shopPrev.per100k) / shopPrev.per100k;
+const shopLand = de.laender.order
+  .map((n) => ({ n, v: de.laender.values[n][SHOP].per100k }))
+  .sort((a, b) => b.v - a.v);
+const euLatest = data.years[data.years.length - 1];
+
+function card(kicker, value, note) {
+  return '<div class="rounded-lg border border-slate-800 bg-slate-900/60 p-4">' +
+    '<p class="text-xs uppercase tracking-wider text-violet-400">' + kicker + '</p>' +
+    '<p class="mt-1 text-2xl font-semibold text-white">' + value + '</p>' +
+    '<p class="mt-1 text-xs text-slate-400">' + note + '</p></div>';
+}
+
+el('bkahead').innerHTML = [
+  card('Shoplifting ' + shopNow.year,
+    shopNow.per100k.toLocaleString() + ' per 100k',
+    (shopMove > 0 ? '+' : '') + shopMove.toFixed(1) + '% on ' + shopPrev.year + '. The harmonised ICCS list ' +
+    'Eurostat publishes has no code for shoplifting at all, so this figure cannot appear anywhere above.'),
+  card('Spread across the sixteen',
+    shopLand[0].v.toLocaleString() + ' to ' + shopLand[shopLand.length - 1].v.toLocaleString(),
+    shopLand[0].n + ' against ' + shopLand[shopLand.length - 1].n + ' — a ' +
+    (shopLand[0].v / shopLand[shopLand.length - 1].v).toFixed(1) + '× gap inside one country. ' +
+    'Eurostat publishes Germany as a single number.'),
+  card('Reporting lag',
+    'BKA ' + dm.reporting_year + ' vs Eurostat ' + euLatest,
+    'The national statistic runs about a year ahead of the harmonised one. That is the reason ' +
+    'this panel exists, and the reason it has to stay separate.'),
+].join('');
+
+de.categories.forEach((c) => {
+  const o = document.createElement('option');
+  o.value = c.key; o.textContent = c.label;
+  el('bkacat').appendChild(o);
+});
+el('bkacat').value = SHOP;
+
+let bkaChart = null;
+
+function drawBka() {
+  const key = el('bkacat').value;
+  const cat = de.categories.find((c) => c.key === key);
+  el('bkacatnote').textContent = cat.note;
+
+  const rows = de.laender.order
+    .map((n) => ({ n, ...de.laender.values[n][key] }))
+    .sort((a, b) => b.per100k - a.per100k);
+  el('bkabody').innerHTML = rows.map((r, i) =>
+    '<tr>' +
+    '<td class="px-4 py-2.5 text-slate-500">' + (i + 1) + '</td>' +
+    '<td class="px-4 py-2.5 text-slate-200">' + r.n + '</td>' +
+    '<td class="px-4 py-2.5 text-right font-medium text-white">' + r.per100k.toLocaleString() + '</td>' +
+    '<td class="px-4 py-2.5 text-right text-slate-400">' + r.cases.toLocaleString() + '</td>' +
+    '<td class="px-4 py-2.5 text-right text-slate-400">' + r.clearance.toFixed(1) + '%</td>' +
+    '</tr>').join('');
+
+  const nat = de.laender.national_row[key];
+  el('bkafoot').innerHTML = '<tr class="bg-slate-900/70">' +
+    '<td class="px-4 py-2.5"></td>' +
+    '<td class="px-4 py-2.5 font-semibold text-violet-300">Germany</td>' +
+    '<td class="px-4 py-2.5 text-right font-semibold text-white">' + nat.per100k.toLocaleString() + '</td>' +
+    '<td class="px-4 py-2.5 text-right">' + nat.cases.toLocaleString() + '</td>' +
+    '<td class="px-4 py-2.5 text-right">' + nat.clearance.toFixed(1) + '%</td>' +
+    '</tr>';
+
+  const series = de.national[key];
+  if (bkaChart) bkaChart.destroy();
+  bkaChart = new Chart(el('bkatrend'), {
+    type: 'line',
+    data: {
+      labels: series.map((p) => p.year),
+      datasets: [
+        { label: cat.label + ', per 100,000', data: series.map((p) => p.per100k),
+          borderColor: '#a78bfa', borderWidth: 2.5, pointRadius: 0, tension: 0.25, yAxisID: 'y' },
+        { label: 'Cleared, % of cases', data: series.map((p) => p.clearance),
+          borderColor: '#fbbf24', borderWidth: 1.5, borderDash: [4, 3], pointRadius: 0, tension: 0.25, yAxisID: 'y1' },
+      ],
+    },
+    options: {
+      interaction: { mode: 'index', intersect: false },
+      plugins: { legend: { labels: { boxWidth: 10, font: { size: 11 } } } },
+      scales: {
+        y: { position: 'left', grid: { color: GRID }, title: { display: true, text: 'per 100,000 inhabitants' } },
+        y1: { position: 'right', min: 0, max: 100, grid: { display: false }, title: { display: true, text: 'cleared, %' } },
+        x: { grid: { display: false } },
+      },
+    },
+  });
+}
+el('bkacat').addEventListener('change', drawBka);
+drawBka();
+
+window.SHRINK = { data, germany: de, drawTable, drawBars, drawBka };

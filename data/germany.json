@@ -1,0 +1,2709 @@
+{
+ "meta": {
+  "title": "Germany, from the national statistic",
+  "source": "PKS Bundeskriminalamt",
+  "reporting_year": 2025,
+  "publisher": "Bundeskriminalamt (BKA)",
+  "landing_page": "https://www.bka.de/DE/AktuelleInformationen/StatistikenLagebilder/PolizeilicheKriminalstatistik/PKS2025/pks2025_node.html",
+  "reuse_terms": "Use of the data, whole or in part, is permitted only with the source, the reporting year and the file version cited (Nutzungshinweis, bka.de).",
+  "versions": {
+   "national_time_series": "V1.1 erstellt am: 08.04.2026",
+   "laender_table": "V1.0 erstellt am: 06.03.2026"
+  },
+  "files": [
+   {
+    "file": "ZR-Bund-Faelle.xlsx",
+    "bytes": 1358571,
+    "sha256": "d7bfb62909f606c5102a4b9c08bff0513fedbf7f352714cae434e351647b5aa0"
+   },
+   {
+    "file": "LA-F-02-HZ.xlsx",
+    "bytes": 1755654,
+    "sha256": "153aae0a20b6721366761cb7b6e958f4dc064f42cb1253ae9798513ee8096ff5"
+   }
+  ],
+  "rate_unit": "Haeufigkeitszahl, recorded cases per 100,000 inhabitants",
+  "population_basis": "2022 census from the 2024 reporting year; earlier years use the previous basis",
+  "years": [
+   1987,
+   2025
+  ],
+  "not_comparable_with": "data/crime.json - Eurostat harmonised ICCS series. The two are shown as separate panels and never spliced."
+ },
+ "categories": [
+  {
+   "key": "------",
+   "label": "All recorded offences",
+   "note": "Every offence in the catalogue, the denominator everything else sits in"
+  },
+  {
+   "key": "****00",
+   "label": "Theft, all forms",
+   "note": "Simple and aggravated theft together, the broadest loss figure BKA publishes"
+  },
+  {
+   "key": "*26*00",
+   "label": "Shoplifting",
+   "note": "Retail theft as its own offence - the harmonised ICCS list Eurostat uses has no code for this"
+  },
+  {
+   "key": "*10*00",
+   "label": "Theft from commercial and warehouse premises",
+   "note": "Offices, workshops, factories and storage rooms - the closest thing in the statistic to loss at a site"
+  },
+  {
+   "key": "435*00",
+   "label": "Residential burglary",
+   "note": "Wohnungseinbruchdiebstahl, published so the commercial share of burglary can be reasoned about"
+  },
+  {
+   "key": "***100",
+   "label": "Car theft",
+   "note": "Cars including unauthorised use; bears on yards and fleets"
+  },
+  {
+   "key": "210000",
+   "label": "Robbery",
+   "note": "Robbery, extortionate robbery and attacks on drivers - the violent tail of loss"
+  },
+  {
+   "key": "510000",
+   "label": "Fraud",
+   "note": "Recorded fraud offences under sections 263 to 265e StGB"
+  }
+ ],
+ "national": {
+  "------": [
+   {
+    "year": 1987,
+    "cases": 4444108,
+    "per100k": 7268.7,
+    "clearance": 44.2
+   },
+   {
+    "year": 1988,
+    "cases": 4356726,
+    "per100k": 7114.4,
+    "clearance": 45.9
+   },
+   {
+    "year": 1989,
+    "cases": 4358573,
+    "per100k": 7062.4,
+    "clearance": 47.2
+   },
+   {
+    "year": 1990,
+    "cases": 4455333,
+    "per100k": 7108.2,
+    "clearance": 47.0
+   },
+   {
+    "year": 1991,
+    "cases": 4752175,
+    "per100k": 7310.9,
+    "clearance": 45.4
+   },
+   {
+    "year": 1992,
+    "cases": 5209060,
+    "per100k": 7920.6,
+    "clearance": 44.8
+   },
+   {
+    "year": 1993,
+    "cases": 6750613,
+    "per100k": 8336.7,
+    "clearance": 43.8
+   },
+   {
+    "year": 1994,
+    "cases": 6537748,
+    "per100k": 8037.7,
+    "clearance": 44.4
+   },
+   {
+    "year": 1995,
+    "cases": 6668717,
+    "per100k": 8178.6,
+    "clearance": 46.0
+   },
+   {
+    "year": 1996,
+    "cases": 6647598,
+    "per100k": 8124.9,
+    "clearance": 49.0
+   },
+   {
+    "year": 1997,
+    "cases": 6586165,
+    "per100k": 8030.7,
+    "clearance": 50.6
+   },
+   {
+    "year": 1998,
+    "cases": 6456996,
+    "per100k": 7868.9,
+    "clearance": 52.3
+   },
+   {
+    "year": 1999,
+    "cases": 6302316,
+    "per100k": 7682.3,
+    "clearance": 52.8
+   },
+   {
+    "year": 2000,
+    "cases": 6264723,
+    "per100k": 7624.7,
+    "clearance": 53.2
+   },
+   {
+    "year": 2001,
+    "cases": 6363865,
+    "per100k": 7736.3,
+    "clearance": 53.1
+   },
+   {
+    "year": 2002,
+    "cases": 6507394,
+    "per100k": 7893.5,
+    "clearance": 52.6
+   },
+   {
+    "year": 2003,
+    "cases": 6572135,
+    "per100k": 7962.7,
+    "clearance": 53.1
+   },
+   {
+    "year": 2004,
+    "cases": 6633156,
+    "per100k": 8037.1,
+    "clearance": 54.2
+   },
+   {
+    "year": 2005,
+    "cases": 6391715,
+    "per100k": 7747.5,
+    "clearance": 55.0
+   },
+   {
+    "year": 2006,
+    "cases": 6304223,
+    "per100k": 7647.2,
+    "clearance": 55.4
+   },
+   {
+    "year": 2007,
+    "cases": 6284661,
+    "per100k": 7634.9,
+    "clearance": 55.0
+   },
+   {
+    "year": 2008,
+    "cases": 6114128,
+    "per100k": 7436.5,
+    "clearance": 54.8
+   },
+   {
+    "year": 2009,
+    "cases": 6054330,
+    "per100k": 7383.1,
+    "clearance": 55.6
+   },
+   {
+    "year": 2010,
+    "cases": 5933278,
+    "per100k": 7253.2,
+    "clearance": 56.0
+   },
+   {
+    "year": 2011,
+    "cases": 5990679,
+    "per100k": 7327.9,
+    "clearance": 54.7
+   },
+   {
+    "year": 2012,
+    "cases": 5997040,
+    "per100k": 7327.4,
+    "clearance": 54.4
+   },
+   {
+    "year": 2013,
+    "cases": 5961662,
+    "per100k": 7403.6,
+    "clearance": 54.5
+   },
+   {
+    "year": 2014,
+    "cases": 6082064,
+    "per100k": 7530.3,
+    "clearance": 54.9
+   },
+   {
+    "year": 2015,
+    "cases": 6330649,
+    "per100k": 7796.6,
+    "clearance": 56.3
+   },
+   {
+    "year": 2016,
+    "cases": 6372526,
+    "per100k": 7754.8,
+    "clearance": 56.2
+   },
+   {
+    "year": 2017,
+    "cases": 5761984,
+    "per100k": 6982.4,
+    "clearance": 57.1
+   },
+   {
+    "year": 2018,
+    "cases": 5555520,
+    "per100k": 6710.2,
+    "clearance": 57.7
+   },
+   {
+    "year": 2019,
+    "cases": 5436401,
+    "per100k": 6548.4,
+    "clearance": 57.5
+   },
+   {
+    "year": 2020,
+    "cases": 5310621,
+    "per100k": 6385.5,
+    "clearance": 58.4
+   },
+   {
+    "year": 2021,
+    "cases": 5047860,
+    "per100k": 6070.4,
+    "clearance": 58.7
+   },
+   {
+    "year": 2022,
+    "cases": 5628584,
+    "per100k": 6762.1,
+    "clearance": 57.3
+   },
+   {
+    "year": 2023,
+    "cases": 5940667,
+    "per100k": 7042.1,
+    "clearance": 58.4
+   },
+   {
+    "year": 2024,
+    "cases": 5837445,
+    "per100k": 6994.6,
+    "clearance": 58.0
+   },
+   {
+    "year": 2025,
+    "cases": 5508559,
+    "per100k": 6591.0,
+    "clearance": 57.9
+   }
+  ],
+  "****00": [
+   {
+    "year": 1987,
+    "cases": 2790849,
+    "per100k": 4564.7,
+    "clearance": 27.8
+   },
+   {
+    "year": 1988,
+    "cases": 2655156,
+    "per100k": 4335.8,
+    "clearance": 28.7
+   },
+   {
+    "year": 1989,
+    "cases": 2571248,
+    "per100k": 4166.3,
+    "clearance": 28.9
+   },
+   {
+    "year": 1990,
+    "cases": 2692246,
+    "per100k": 4295.3,
+    "clearance": 30.2
+   },
+   {
+    "year": 1991,
+    "cases": 2874612,
+    "per100k": 4422.4,
+    "clearance": 28.7
+   },
+   {
+    "year": 1992,
+    "cases": 3196235,
+    "per100k": 4860.0,
+    "clearance": 28.1
+   },
+   {
+    "year": 1993,
+    "cases": 4151087,
+    "per100k": 5126.4,
+    "clearance": 27.2
+   },
+   {
+    "year": 1994,
+    "cases": 3866336,
+    "per100k": 4753.4,
+    "clearance": 26.4
+   },
+   {
+    "year": 1995,
+    "cases": 3848308,
+    "per100k": 4719.6,
+    "clearance": 27.7
+   },
+   {
+    "year": 1996,
+    "cases": 3672655,
+    "per100k": 4488.8,
+    "clearance": 30.0
+   },
+   {
+    "year": 1997,
+    "cases": 3537610,
+    "per100k": 4313.5,
+    "clearance": 31.5
+   },
+   {
+    "year": 1998,
+    "cases": 3323989,
+    "per100k": 4050.8,
+    "clearance": 32.3
+   },
+   {
+    "year": 1999,
+    "cases": 3133418,
+    "per100k": 3819.5,
+    "clearance": 31.5
+   },
+   {
+    "year": 2000,
+    "cases": 2983269,
+    "per100k": 3630.9,
+    "clearance": 31.2
+   },
+   {
+    "year": 2001,
+    "cases": 2971727,
+    "per100k": 3612.6,
+    "clearance": 30.8
+   },
+   {
+    "year": 2002,
+    "cases": 3090154,
+    "per100k": 3748.4,
+    "clearance": 30.2
+   },
+   {
+    "year": 2003,
+    "cases": 3029390,
+    "per100k": 3670.4,
+    "clearance": 29.7
+   },
+   {
+    "year": 2004,
+    "cases": 2961030,
+    "per100k": 3587.7,
+    "clearance": 29.8
+   },
+   {
+    "year": 2005,
+    "cases": 2727048,
+    "per100k": 3305.5,
+    "clearance": 29.5
+   },
+   {
+    "year": 2006,
+    "cases": 2601902,
+    "per100k": 3156.2,
+    "clearance": 29.7
+   },
+   {
+    "year": 2007,
+    "cases": 2561691,
+    "per100k": 3112.1,
+    "clearance": 29.6
+   },
+   {
+    "year": 2008,
+    "cases": 2443280,
+    "per100k": 2971.7,
+    "clearance": 29.8
+   },
+   {
+    "year": 2009,
+    "cases": 2344646,
+    "per100k": 2859.2,
+    "clearance": 30.1
+   },
+   {
+    "year": 2010,
+    "cases": 2301786,
+    "per100k": 2813.8,
+    "clearance": 30.0
+   },
+   {
+    "year": 2011,
+    "cases": 2403781,
+    "per100k": 2940.3,
+    "clearance": 28.9
+   },
+   {
+    "year": 2012,
+    "cases": 2379725,
+    "per100k": 2907.6,
+    "clearance": 28.0
+   },
+   {
+    "year": 2013,
+    "cases": 2382743,
+    "per100k": 2959.1,
+    "clearance": 27.5
+   },
+   {
+    "year": 2014,
+    "cases": 2440060,
+    "per100k": 3021.1,
+    "clearance": 27.0
+   },
+   {
+    "year": 2015,
+    "cases": 2483694,
+    "per100k": 3058.8,
+    "clearance": 27.0
+   },
+   {
+    "year": 2016,
+    "cases": 2373774,
+    "per100k": 2888.7,
+    "clearance": 27.2
+   },
+   {
+    "year": 2017,
+    "cases": 2092994,
+    "per100k": 2536.3,
+    "clearance": 28.5
+   },
+   {
+    "year": 2018,
+    "cases": 1936315,
+    "per100k": 2338.8,
+    "clearance": 29.3
+   },
+   {
+    "year": 2019,
+    "cases": 1822212,
+    "per100k": 2194.9,
+    "clearance": 29.2
+   },
+   {
+    "year": 2020,
+    "cases": 1682610,
+    "per100k": 2023.2,
+    "clearance": 30.1
+   },
+   {
+    "year": 2021,
+    "cases": 1483566,
+    "per100k": 1784.1,
+    "clearance": 29.3
+   },
+   {
+    "year": 2022,
+    "cases": 1780783,
+    "per100k": 2139.4,
+    "clearance": 29.8
+   },
+   {
+    "year": 2023,
+    "cases": 1971435,
+    "per100k": 2337.0,
+    "clearance": 31.8
+   },
+   {
+    "year": 2024,
+    "cases": 1940033,
+    "per100k": 2324.6,
+    "clearance": 31.4
+   },
+   {
+    "year": 2025,
+    "cases": 1813141,
+    "per100k": 2169.4,
+    "clearance": 31.9
+   }
+  ],
+  "*26*00": [
+   {
+    "year": 1987,
+    "cases": 351860,
+    "per100k": 575.5,
+    "clearance": 94.8
+   },
+   {
+    "year": 1988,
+    "cases": 353972,
+    "per100k": 578.0,
+    "clearance": 95.1
+   },
+   {
+    "year": 1989,
+    "cases": 375803,
+    "per100k": 608.9,
+    "clearance": 95.6
+   },
+   {
+    "year": 1990,
+    "cases": 458391,
+    "per100k": 731.3,
+    "clearance": 96.0
+   },
+   {
+    "year": 1991,
+    "cases": 468507,
+    "per100k": 720.8,
+    "clearance": 95.6
+   },
+   {
+    "year": 1992,
+    "cases": 529756,
+    "per100k": 805.5,
+    "clearance": 95.6
+   },
+   {
+    "year": 1993,
+    "cases": 670965,
+    "per100k": 828.6,
+    "clearance": 95.2
+   },
+   {
+    "year": 1994,
+    "cases": 585671,
+    "per100k": 720.0,
+    "clearance": 95.4
+   },
+   {
+    "year": 1995,
+    "cases": 614312,
+    "per100k": 753.4,
+    "clearance": 95.5
+   },
+   {
+    "year": 1996,
+    "cases": 656339,
+    "per100k": 802.2,
+    "clearance": 95.9
+   },
+   {
+    "year": 1997,
+    "cases": 677542,
+    "per100k": 826.1,
+    "clearance": 95.5
+   },
+   {
+    "year": 1998,
+    "cases": 655211,
+    "per100k": 798.5,
+    "clearance": 95.5
+   },
+   {
+    "year": 1999,
+    "cases": 596436,
+    "per100k": 727.0,
+    "clearance": 94.9
+   },
+   {
+    "year": 2000,
+    "cases": 562835,
+    "per100k": 685.0,
+    "clearance": 94.2
+   },
+   {
+    "year": 2001,
+    "cases": 549314,
+    "per100k": 667.8,
+    "clearance": 94.3
+   },
+   {
+    "year": 2002,
+    "cases": 559033,
+    "per100k": 678.1,
+    "clearance": 94.4
+   },
+   {
+    "year": 2003,
+    "cases": 534340,
+    "per100k": 647.4,
+    "clearance": 94.1
+   },
+   {
+    "year": 2004,
+    "cases": 509417,
+    "per100k": 617.2,
+    "clearance": 94.1
+   },
+   {
+    "year": 2005,
+    "cases": 461293,
+    "per100k": 559.1,
+    "clearance": 93.2
+   },
+   {
+    "year": 2006,
+    "cases": 437896,
+    "per100k": 531.2,
+    "clearance": 92.6
+   },
+   {
+    "year": 2007,
+    "cases": 408377,
+    "per100k": 496.1,
+    "clearance": 93.1
+   },
+   {
+    "year": 2008,
+    "cases": 395722,
+    "per100k": 481.3,
+    "clearance": 92.9
+   },
+   {
+    "year": 2009,
+    "cases": 394033,
+    "per100k": 480.5,
+    "clearance": 92.7
+   },
+   {
+    "year": 2010,
+    "cases": 387662,
+    "per100k": 473.9,
+    "clearance": 92.9
+   },
+   {
+    "year": 2011,
+    "cases": 385463,
+    "per100k": 471.5,
+    "clearance": 92.5
+   },
+   {
+    "year": 2012,
+    "cases": 361759,
+    "per100k": 442.0,
+    "clearance": 92.2
+   },
+   {
+    "year": 2013,
+    "cases": 356152,
+    "per100k": 442.3,
+    "clearance": 92.2
+   },
+   {
+    "year": 2014,
+    "cases": 365373,
+    "per100k": 452.4,
+    "clearance": 91.8
+   },
+   {
+    "year": 2015,
+    "cases": 391401,
+    "per100k": 482.0,
+    "clearance": 91.2
+   },
+   {
+    "year": 2016,
+    "cases": 378448,
+    "per100k": 460.5,
+    "clearance": 90.6
+   },
+   {
+    "year": 2017,
+    "cases": 353384,
+    "per100k": 428.2,
+    "clearance": 90.9
+   },
+   {
+    "year": 2018,
+    "cases": 339021,
+    "per100k": 409.5,
+    "clearance": 91.0
+   },
+   {
+    "year": 2019,
+    "cases": 325786,
+    "per100k": 392.4,
+    "clearance": 90.4
+   },
+   {
+    "year": 2020,
+    "cases": 304005,
+    "per100k": 365.5,
+    "clearance": 90.2
+   },
+   {
+    "year": 2021,
+    "cases": 256694,
+    "per100k": 308.7,
+    "clearance": 89.8
+   },
+   {
+    "year": 2022,
+    "cases": 344669,
+    "per100k": 414.1,
+    "clearance": 89.8
+   },
+   {
+    "year": 2023,
+    "cases": 426096,
+    "per100k": 505.1,
+    "clearance": 90.0
+   },
+   {
+    "year": 2024,
+    "cases": 404907,
+    "per100k": 485.2,
+    "clearance": 89.3
+   },
+   {
+    "year": 2025,
+    "cases": 383096,
+    "per100k": 458.4,
+    "clearance": 89.4
+   }
+  ],
+  "*10*00": [
+   {
+    "year": 1987,
+    "cases": 133470,
+    "per100k": 218.3,
+    "clearance": 23.7
+   },
+   {
+    "year": 1988,
+    "cases": 129379,
+    "per100k": 211.3,
+    "clearance": 24.8
+   },
+   {
+    "year": 1989,
+    "cases": 127333,
+    "per100k": 206.3,
+    "clearance": 24.3
+   },
+   {
+    "year": 1990,
+    "cases": 128508,
+    "per100k": 205.0,
+    "clearance": 23.0
+   },
+   {
+    "year": 1991,
+    "cases": 147344,
+    "per100k": 226.7,
+    "clearance": 23.2
+   },
+   {
+    "year": 1992,
+    "cases": 155708,
+    "per100k": 236.8,
+    "clearance": 21.3
+   },
+   {
+    "year": 1993,
+    "cases": 227519,
+    "per100k": 281.0,
+    "clearance": 18.1
+   },
+   {
+    "year": 1994,
+    "cases": 222582,
+    "per100k": 273.7,
+    "clearance": 19.1
+   },
+   {
+    "year": 1995,
+    "cases": 224986,
+    "per100k": 275.9,
+    "clearance": 20.1
+   },
+   {
+    "year": 1996,
+    "cases": 217096,
+    "per100k": 265.3,
+    "clearance": 22.2
+   },
+   {
+    "year": 1997,
+    "cases": 208573,
+    "per100k": 254.3,
+    "clearance": 22.6
+   },
+   {
+    "year": 1998,
+    "cases": 198951,
+    "per100k": 242.5,
+    "clearance": 22.7
+   },
+   {
+    "year": 1999,
+    "cases": 186104,
+    "per100k": 226.9,
+    "clearance": 23.7
+   },
+   {
+    "year": 2000,
+    "cases": 182187,
+    "per100k": 221.7,
+    "clearance": 22.5
+   },
+   {
+    "year": 2001,
+    "cases": 182621,
+    "per100k": 222.0,
+    "clearance": 22.0
+   },
+   {
+    "year": 2002,
+    "cases": 186007,
+    "per100k": 225.6,
+    "clearance": 20.9
+   },
+   {
+    "year": 2003,
+    "cases": 185783,
+    "per100k": 225.1,
+    "clearance": 21.6
+   },
+   {
+    "year": 2004,
+    "cases": 193480,
+    "per100k": 234.4,
+    "clearance": 22.0
+   },
+   {
+    "year": 2005,
+    "cases": 181579,
+    "per100k": 220.1,
+    "clearance": 22.3
+   },
+   {
+    "year": 2006,
+    "cases": 180145,
+    "per100k": 218.5,
+    "clearance": 22.7
+   },
+   {
+    "year": 2007,
+    "cases": 177017,
+    "per100k": 215.0,
+    "clearance": 22.8
+   },
+   {
+    "year": 2008,
+    "cases": 162374,
+    "per100k": 197.5,
+    "clearance": 21.9
+   },
+   {
+    "year": 2009,
+    "cases": 152416,
+    "per100k": 185.9,
+    "clearance": 22.1
+   },
+   {
+    "year": 2010,
+    "cases": 146979,
+    "per100k": 179.7,
+    "clearance": 22.6
+   },
+   {
+    "year": 2011,
+    "cases": 147936,
+    "per100k": 181.0,
+    "clearance": 22.3
+   },
+   {
+    "year": 2012,
+    "cases": 145883,
+    "per100k": 178.2,
+    "clearance": 21.7
+   },
+   {
+    "year": 2013,
+    "cases": 140186,
+    "per100k": 174.1,
+    "clearance": 21.8
+   },
+   {
+    "year": 2014,
+    "cases": 136120,
+    "per100k": 168.5,
+    "clearance": 20.4
+   },
+   {
+    "year": 2015,
+    "cases": 131636,
+    "per100k": 162.1,
+    "clearance": 20.0
+   },
+   {
+    "year": 2016,
+    "cases": 123117,
+    "per100k": 149.8,
+    "clearance": 20.3
+   },
+   {
+    "year": 2017,
+    "cases": 107824,
+    "per100k": 130.7,
+    "clearance": 21.4
+   },
+   {
+    "year": 2018,
+    "cases": 96864,
+    "per100k": 117.0,
+    "clearance": 21.6
+   },
+   {
+    "year": 2019,
+    "cases": 93254,
+    "per100k": 112.3,
+    "clearance": 21.1
+   },
+   {
+    "year": 2020,
+    "cases": 80503,
+    "per100k": 96.8,
+    "clearance": 22.7
+   },
+   {
+    "year": 2021,
+    "cases": 64654,
+    "per100k": 77.8,
+    "clearance": 23.2
+   },
+   {
+    "year": 2022,
+    "cases": 71632,
+    "per100k": 86.1,
+    "clearance": 21.8
+   },
+   {
+    "year": 2023,
+    "cases": 77193,
+    "per100k": 91.5,
+    "clearance": 21.9
+   },
+   {
+    "year": 2024,
+    "cases": 74788,
+    "per100k": 89.6,
+    "clearance": 22.2
+   },
+   {
+    "year": 2025,
+    "cases": 68845,
+    "per100k": 82.4,
+    "clearance": 23.0
+   }
+  ],
+  "435*00": [
+   {
+    "year": 1987,
+    "cases": 164847,
+    "per100k": 269.6,
+    "clearance": 18.7
+   },
+   {
+    "year": 1988,
+    "cases": 169011,
+    "per100k": 276.0,
+    "clearance": 17.5
+   },
+   {
+    "year": 1989,
+    "cases": 156917,
+    "per100k": 254.3,
+    "clearance": 17.0
+   },
+   {
+    "year": 1990,
+    "cases": 151974,
+    "per100k": 242.5,
+    "clearance": 16.2
+   },
+   {
+    "year": 1991,
+    "cases": 151752,
+    "per100k": 233.5,
+    "clearance": 15.9
+   },
+   {
+    "year": 1992,
+    "cases": 173600,
+    "per100k": 264.0,
+    "clearance": 14.0
+   },
+   {
+    "year": 1993,
+    "cases": 227090,
+    "per100k": 280.4,
+    "clearance": 13.8
+   },
+   {
+    "year": 1994,
+    "cases": 210982,
+    "per100k": 259.4,
+    "clearance": 14.2
+   },
+   {
+    "year": 1995,
+    "cases": 211221,
+    "per100k": 259.0,
+    "clearance": 15.1
+   },
+   {
+    "year": 1996,
+    "cases": 195801,
+    "per100k": 239.3,
+    "clearance": 16.3
+   },
+   {
+    "year": 1997,
+    "cases": 182009,
+    "per100k": 221.9,
+    "clearance": 17.5
+   },
+   {
+    "year": 1998,
+    "cases": 166742,
+    "per100k": 203.2,
+    "clearance": 17.5
+   },
+   {
+    "year": 1999,
+    "cases": 149044,
+    "per100k": 181.7,
+    "clearance": 18.3
+   },
+   {
+    "year": 2000,
+    "cases": 140015,
+    "per100k": 170.4,
+    "clearance": 17.7
+   },
+   {
+    "year": 2001,
+    "cases": 133722,
+    "per100k": 162.6,
+    "clearance": 18.7
+   },
+   {
+    "year": 2002,
+    "cases": 130055,
+    "per100k": 157.8,
+    "clearance": 19.6
+   },
+   {
+    "year": 2003,
+    "cases": 123280,
+    "per100k": 149.4,
+    "clearance": 18.0
+   },
+   {
+    "year": 2004,
+    "cases": 124155,
+    "per100k": 150.4,
+    "clearance": 19.5
+   },
+   {
+    "year": 2005,
+    "cases": 109736,
+    "per100k": 133.0,
+    "clearance": 19.6
+   },
+   {
+    "year": 2006,
+    "cases": 106107,
+    "per100k": 128.7,
+    "clearance": 19.3
+   },
+   {
+    "year": 2007,
+    "cases": 109128,
+    "per100k": 132.6,
+    "clearance": 20.0
+   },
+   {
+    "year": 2008,
+    "cases": 108284,
+    "per100k": 131.7,
+    "clearance": 18.1
+   },
+   {
+    "year": 2009,
+    "cases": 113800,
+    "per100k": 138.8,
+    "clearance": 16.9
+   },
+   {
+    "year": 2010,
+    "cases": 121347,
+    "per100k": 148.3,
+    "clearance": 15.9
+   },
+   {
+    "year": 2011,
+    "cases": 132595,
+    "per100k": 162.2,
+    "clearance": 16.2
+   },
+   {
+    "year": 2012,
+    "cases": 144117,
+    "per100k": 176.1,
+    "clearance": 15.7
+   },
+   {
+    "year": 2013,
+    "cases": 149500,
+    "per100k": 185.7,
+    "clearance": 15.5
+   },
+   {
+    "year": 2014,
+    "cases": 152123,
+    "per100k": 188.3,
+    "clearance": 15.9
+   },
+   {
+    "year": 2015,
+    "cases": 167136,
+    "per100k": 205.8,
+    "clearance": 15.2
+   },
+   {
+    "year": 2016,
+    "cases": 151265,
+    "per100k": 184.1,
+    "clearance": 16.9
+   },
+   {
+    "year": 2017,
+    "cases": 116540,
+    "per100k": 141.2,
+    "clearance": 17.8
+   },
+   {
+    "year": 2018,
+    "cases": 97504,
+    "per100k": 117.8,
+    "clearance": 18.1
+   },
+   {
+    "year": 2019,
+    "cases": 87145,
+    "per100k": 105.0,
+    "clearance": 17.4
+   },
+   {
+    "year": 2020,
+    "cases": 75023,
+    "per100k": 90.2,
+    "clearance": 17.6
+   },
+   {
+    "year": 2021,
+    "cases": 54236,
+    "per100k": 65.2,
+    "clearance": 19.5
+   },
+   {
+    "year": 2022,
+    "cases": 65908,
+    "per100k": 79.2,
+    "clearance": 16.1
+   },
+   {
+    "year": 2023,
+    "cases": 77819,
+    "per100k": 92.2,
+    "clearance": 14.9
+   },
+   {
+    "year": 2024,
+    "cases": 78436,
+    "per100k": 94.0,
+    "clearance": 15.3
+   },
+   {
+    "year": 2025,
+    "cases": 82920,
+    "per100k": 99.2,
+    "clearance": 14.1
+   }
+  ],
+  "***100": [
+   {
+    "year": 1987,
+    "cases": 74109,
+    "per100k": 121.2,
+    "clearance": 31.0
+   },
+   {
+    "year": 1988,
+    "cases": 69552,
+    "per100k": 113.6,
+    "clearance": 31.6
+   },
+   {
+    "year": 1989,
+    "cases": 66852,
+    "per100k": 108.3,
+    "clearance": 30.7
+   },
+   {
+    "year": 1990,
+    "cases": 72172,
+    "per100k": 115.1,
+    "clearance": 30.7
+   },
+   {
+    "year": 1991,
+    "cases": 89220,
+    "per100k": 137.3,
+    "clearance": 28.0
+   },
+   {
+    "year": 1992,
+    "cases": 115957,
+    "per100k": 176.3,
+    "clearance": 24.5
+   },
+   {
+    "year": 1993,
+    "cases": 214836,
+    "per100k": 265.3,
+    "clearance": 20.4
+   },
+   {
+    "year": 1994,
+    "cases": 211576,
+    "per100k": 260.1,
+    "clearance": 19.9
+   },
+   {
+    "year": 1995,
+    "cases": 201493,
+    "per100k": 247.1,
+    "clearance": 21.7
+   },
+   {
+    "year": 1996,
+    "cases": 170941,
+    "per100k": 208.9,
+    "clearance": 23.7
+   },
+   {
+    "year": 1997,
+    "cases": 138098,
+    "per100k": 168.4,
+    "clearance": 26.4
+   },
+   {
+    "year": 1998,
+    "cases": 112717,
+    "per100k": 137.4,
+    "clearance": 26.4
+   },
+   {
+    "year": 1999,
+    "cases": 93745,
+    "per100k": 114.3,
+    "clearance": 26.3
+   },
+   {
+    "year": 2000,
+    "cases": 83063,
+    "per100k": 101.1,
+    "clearance": 26.2
+   },
+   {
+    "year": 2001,
+    "cases": 75408,
+    "per100k": 91.7,
+    "clearance": 25.8
+   },
+   {
+    "year": 2002,
+    "cases": 70617,
+    "per100k": 85.7,
+    "clearance": 26.8
+   },
+   {
+    "year": 2003,
+    "cases": 63240,
+    "per100k": 76.6,
+    "clearance": 26.4
+   },
+   {
+    "year": 2004,
+    "cases": 58937,
+    "per100k": 71.4,
+    "clearance": 27.0
+   },
+   {
+    "year": 2005,
+    "cases": 50361,
+    "per100k": 61.0,
+    "clearance": 27.9
+   },
+   {
+    "year": 2006,
+    "cases": 42320,
+    "per100k": 51.3,
+    "clearance": 29.2
+   },
+   {
+    "year": 2007,
+    "cases": 39438,
+    "per100k": 47.9,
+    "clearance": 30.3
+   },
+   {
+    "year": 2008,
+    "cases": 37184,
+    "per100k": 45.2,
+    "clearance": 28.0
+   },
+   {
+    "year": 2009,
+    "cases": 40375,
+    "per100k": 49.2,
+    "clearance": 26.7
+   },
+   {
+    "year": 2010,
+    "cases": 42002,
+    "per100k": 51.3,
+    "clearance": 24.8
+   },
+   {
+    "year": 2011,
+    "cases": 41057,
+    "per100k": 50.2,
+    "clearance": 26.8
+   },
+   {
+    "year": 2012,
+    "cases": 37238,
+    "per100k": 45.5,
+    "clearance": 26.7
+   },
+   {
+    "year": 2013,
+    "cases": 37427,
+    "per100k": 46.5,
+    "clearance": 26.1
+   },
+   {
+    "year": 2014,
+    "cases": 36388,
+    "per100k": 45.1,
+    "clearance": 27.5
+   },
+   {
+    "year": 2015,
+    "cases": 36507,
+    "per100k": 45.0,
+    "clearance": 27.0
+   },
+   {
+    "year": 2016,
+    "cases": 36388,
+    "per100k": 44.3,
+    "clearance": 25.1
+   },
+   {
+    "year": 2017,
+    "cases": 33263,
+    "per100k": 40.3,
+    "clearance": 26.7
+   },
+   {
+    "year": 2018,
+    "cases": 30232,
+    "per100k": 36.5,
+    "clearance": 28.5
+   },
+   {
+    "year": 2019,
+    "cases": 28132,
+    "per100k": 33.9,
+    "clearance": 28.8
+   },
+   {
+    "year": 2020,
+    "cases": 23646,
+    "per100k": 28.4,
+    "clearance": 33.8
+   },
+   {
+    "year": 2021,
+    "cases": 21584,
+    "per100k": 26.0,
+    "clearance": 31.2
+   },
+   {
+    "year": 2022,
+    "cases": 25511,
+    "per100k": 30.6,
+    "clearance": 31.1
+   },
+   {
+    "year": 2023,
+    "cases": 29985,
+    "per100k": 35.5,
+    "clearance": 27.3
+   },
+   {
+    "year": 2024,
+    "cases": 30373,
+    "per100k": 36.4,
+    "clearance": 29.2
+   },
+   {
+    "year": 2025,
+    "cases": 27632,
+    "per100k": 33.1,
+    "clearance": 30.1
+   }
+  ],
+  "210000": [
+   {
+    "year": 1987,
+    "cases": 28122,
+    "per100k": 46.0,
+    "clearance": 47.5
+   },
+   {
+    "year": 1988,
+    "cases": 28952,
+    "per100k": 47.3,
+    "clearance": 46.4
+   },
+   {
+    "year": 1989,
+    "cases": 30152,
+    "per100k": 48.9,
+    "clearance": 43.8
+   },
+   {
+    "year": 1990,
+    "cases": 35111,
+    "per100k": 56.0,
+    "clearance": 43.7
+   },
+   {
+    "year": 1991,
+    "cases": 44638,
+    "per100k": 68.7,
+    "clearance": 41.4
+   },
+   {
+    "year": 1992,
+    "cases": 46845,
+    "per100k": 71.2,
+    "clearance": 41.4
+   },
+   {
+    "year": 1993,
+    "cases": 61757,
+    "per100k": 76.3,
+    "clearance": 42.6
+   },
+   {
+    "year": 1994,
+    "cases": 57752,
+    "per100k": 71.0,
+    "clearance": 43.9
+   },
+   {
+    "year": 1995,
+    "cases": 63470,
+    "per100k": 77.8,
+    "clearance": 45.8
+   },
+   {
+    "year": 1996,
+    "cases": 67578,
+    "per100k": 82.6,
+    "clearance": 47.4
+   },
+   {
+    "year": 1997,
+    "cases": 69569,
+    "per100k": 84.8,
+    "clearance": 48.4
+   },
+   {
+    "year": 1998,
+    "cases": 64405,
+    "per100k": 78.5,
+    "clearance": 49.9
+   },
+   {
+    "year": 1999,
+    "cases": 61420,
+    "per100k": 74.9,
+    "clearance": 50.4
+   },
+   {
+    "year": 2000,
+    "cases": 59414,
+    "per100k": 72.3,
+    "clearance": 50.5
+   },
+   {
+    "year": 2001,
+    "cases": 57108,
+    "per100k": 69.4,
+    "clearance": 50.9
+   },
+   {
+    "year": 2002,
+    "cases": 58867,
+    "per100k": 71.4,
+    "clearance": 50.2
+   },
+   {
+    "year": 2003,
+    "cases": 59782,
+    "per100k": 72.4,
+    "clearance": 50.0
+   },
+   {
+    "year": 2004,
+    "cases": 59732,
+    "per100k": 72.4,
+    "clearance": 50.8
+   },
+   {
+    "year": 2005,
+    "cases": 54841,
+    "per100k": 66.5,
+    "clearance": 50.9
+   },
+   {
+    "year": 2006,
+    "cases": 53696,
+    "per100k": 65.1,
+    "clearance": 51.5
+   },
+   {
+    "year": 2007,
+    "cases": 52949,
+    "per100k": 64.3,
+    "clearance": 51.5
+   },
+   {
+    "year": 2008,
+    "cases": 49913,
+    "per100k": 60.7,
+    "clearance": 52.8
+   },
+   {
+    "year": 2009,
+    "cases": 49317,
+    "per100k": 60.1,
+    "clearance": 52.6
+   },
+   {
+    "year": 2010,
+    "cases": 48166,
+    "per100k": 58.9,
+    "clearance": 52.6
+   },
+   {
+    "year": 2011,
+    "cases": 48021,
+    "per100k": 58.7,
+    "clearance": 52.7
+   },
+   {
+    "year": 2012,
+    "cases": 48711,
+    "per100k": 59.5,
+    "clearance": 51.0
+   },
+   {
+    "year": 2013,
+    "cases": 47234,
+    "per100k": 58.7,
+    "clearance": 51.7
+   },
+   {
+    "year": 2014,
+    "cases": 45475,
+    "per100k": 56.3,
+    "clearance": 51.6
+   },
+   {
+    "year": 2015,
+    "cases": 44666,
+    "per100k": 55.0,
+    "clearance": 51.7
+   },
+   {
+    "year": 2016,
+    "cases": 43009,
+    "per100k": 52.3,
+    "clearance": 52.0
+   },
+   {
+    "year": 2017,
+    "cases": 38849,
+    "per100k": 47.1,
+    "clearance": 55.1
+   },
+   {
+    "year": 2018,
+    "cases": 36756,
+    "per100k": 44.4,
+    "clearance": 57.0
+   },
+   {
+    "year": 2019,
+    "cases": 36052,
+    "per100k": 43.4,
+    "clearance": 59.0
+   },
+   {
+    "year": 2020,
+    "cases": 33872,
+    "per100k": 40.7,
+    "clearance": 60.9
+   },
+   {
+    "year": 2021,
+    "cases": 30125,
+    "per100k": 36.2,
+    "clearance": 61.7
+   },
+   {
+    "year": 2022,
+    "cases": 38195,
+    "per100k": 45.9,
+    "clearance": 59.9
+   },
+   {
+    "year": 2023,
+    "cases": 44857,
+    "per100k": 53.2,
+    "clearance": 60.1
+   },
+   {
+    "year": 2024,
+    "cases": 43194,
+    "per100k": 51.8,
+    "clearance": 60.8
+   },
+   {
+    "year": 2025,
+    "cases": 40119,
+    "per100k": 48.0,
+    "clearance": 62.4
+   }
+  ],
+  "510000": [
+   {
+    "year": 1987,
+    "cases": 358493,
+    "per100k": 586.3,
+    "clearance": 90.7
+   },
+   {
+    "year": 1988,
+    "cases": 368776,
+    "per100k": 602.2,
+    "clearance": 89.9
+   },
+   {
+    "year": 1989,
+    "cases": 401352,
+    "per100k": 650.3,
+    "clearance": 91.2
+   },
+   {
+    "year": 1990,
+    "cases": 363888,
+    "per100k": 580.6,
+    "clearance": 90.0
+   },
+   {
+    "year": 1991,
+    "cases": 371542,
+    "per100k": 571.6,
+    "clearance": 87.6
+   },
+   {
+    "year": 1992,
+    "cases": 407492,
+    "per100k": 619.6,
+    "clearance": 84.6
+   },
+   {
+    "year": 1993,
+    "cases": 528410,
+    "per100k": 652.6,
+    "clearance": 81.2
+   },
+   {
+    "year": 1994,
+    "cases": 587423,
+    "per100k": 722.2,
+    "clearance": 79.0
+   },
+   {
+    "year": 1995,
+    "cases": 623182,
+    "per100k": 764.3,
+    "clearance": 78.6
+   },
+   {
+    "year": 1996,
+    "cases": 648650,
+    "per100k": 792.8,
+    "clearance": 80.9
+   },
+   {
+    "year": 1997,
+    "cases": 670845,
+    "per100k": 818.0,
+    "clearance": 81.1
+   },
+   {
+    "year": 1998,
+    "cases": 705529,
+    "per100k": 859.8,
+    "clearance": 82.1
+   },
+   {
+    "year": 1999,
+    "cases": 717333,
+    "per100k": 874.4,
+    "clearance": 82.7
+   },
+   {
+    "year": 2000,
+    "cases": 771367,
+    "per100k": 938.8,
+    "clearance": 79.9
+   },
+   {
+    "year": 2001,
+    "cases": 793403,
+    "per100k": 964.5,
+    "clearance": 79.4
+   },
+   {
+    "year": 2002,
+    "cases": 788208,
+    "per100k": 956.1,
+    "clearance": 79.3
+   },
+   {
+    "year": 2003,
+    "cases": 876032,
+    "per100k": 1061.4,
+    "clearance": 79.5
+   },
+   {
+    "year": 2004,
+    "cases": 941859,
+    "per100k": 1141.2,
+    "clearance": 81.4
+   },
+   {
+    "year": 2005,
+    "cases": 949921,
+    "per100k": 1151.4,
+    "clearance": 83.1
+   },
+   {
+    "year": 2006,
+    "cases": 954277,
+    "per100k": 1157.6,
+    "clearance": 83.8
+   },
+   {
+    "year": 2007,
+    "cases": 912899,
+    "per100k": 1109.0,
+    "clearance": 83.3
+   },
+   {
+    "year": 2008,
+    "cases": 887906,
+    "per100k": 1079.9,
+    "clearance": 81.7
+   },
+   {
+    "year": 2009,
+    "cases": 955804,
+    "per100k": 1165.6,
+    "clearance": 81.3
+   },
+   {
+    "year": 2010,
+    "cases": 968162,
+    "per100k": 1183.5,
+    "clearance": 79.9
+   },
+   {
+    "year": 2011,
+    "cases": 934882,
+    "per100k": 1143.6,
+    "clearance": 78.3
+   },
+   {
+    "year": 2012,
+    "cases": 958515,
+    "per100k": 1171.2,
+    "clearance": 77.4
+   },
+   {
+    "year": 2013,
+    "cases": 937891,
+    "per100k": 1164.7,
+    "clearance": 76.2
+   },
+   {
+    "year": 2014,
+    "cases": 968866,
+    "per100k": 1199.6,
+    "clearance": 76.8
+   },
+   {
+    "year": 2015,
+    "cases": 966326,
+    "per100k": 1190.1,
+    "clearance": 76.4
+   },
+   {
+    "year": 2016,
+    "cases": 899043,
+    "per100k": 1094.0,
+    "clearance": 75.0
+   },
+   {
+    "year": 2017,
+    "cases": 910352,
+    "per100k": 1103.2,
+    "clearance": 73.7
+   },
+   {
+    "year": 2018,
+    "cases": 840783,
+    "per100k": 1015.5,
+    "clearance": 70.6
+   },
+   {
+    "year": 2019,
+    "cases": 832966,
+    "per100k": 1003.3,
+    "clearance": 66.6
+   },
+   {
+    "year": 2020,
+    "cases": 808074,
+    "per100k": 971.6,
+    "clearance": 65.5
+   },
+   {
+    "year": 2021,
+    "cases": 793622,
+    "per100k": 954.4,
+    "clearance": 63.3
+   },
+   {
+    "year": 2022,
+    "cases": 801412,
+    "per100k": 962.8,
+    "clearance": 58.0
+   },
+   {
+    "year": 2023,
+    "cases": 754489,
+    "per100k": 894.4,
+    "clearance": 59.4
+   },
+   {
+    "year": 2024,
+    "cases": 743472,
+    "per100k": 890.9,
+    "clearance": 60.9
+   },
+   {
+    "year": 2025,
+    "cases": 681354,
+    "per100k": 815.2,
+    "clearance": 60.0
+   }
+  ]
+ },
+ "laender": {
+  "order": [
+   "Baden-Württemberg",
+   "Bayern",
+   "Berlin",
+   "Brandenburg",
+   "Bremen",
+   "Hamburg",
+   "Hessen",
+   "Mecklenburg-Vorpommern",
+   "Niedersachsen",
+   "Nordrhein-Westfalen",
+   "Rheinland-Pfalz",
+   "Saarland",
+   "Sachsen",
+   "Sachsen-Anhalt",
+   "Schleswig-Holstein",
+   "Thüringen"
+  ],
+  "values": {
+   "Baden-Württemberg": {
+    "------": {
+     "cases": 551295,
+     "per100k": 4902.2,
+     "clearance": 62.5
+    },
+    "210000": {
+     "cases": 3281,
+     "per100k": 29.2,
+     "clearance": 72.4
+    },
+    "435*00": {
+     "cases": 5844,
+     "per100k": 52.0,
+     "clearance": 17.6
+    },
+    "****00": {
+     "cases": 158189,
+     "per100k": 1406.6,
+     "clearance": 38.1
+    },
+    "***100": {
+     "cases": 1577,
+     "per100k": 14.0,
+     "clearance": 47.8
+    },
+    "*10*00": {
+     "cases": 5356,
+     "per100k": 47.6,
+     "clearance": 25.4
+    },
+    "*26*00": {
+     "cases": 40212,
+     "per100k": 357.6,
+     "clearance": 90.9
+    },
+    "510000": {
+     "cases": 76214,
+     "per100k": 677.7,
+     "clearance": 64.7
+    }
+   },
+   "Bayern": {
+    "------": {
+     "cases": 579115,
+     "per100k": 4371.0,
+     "clearance": 68.1
+    },
+    "210000": {
+     "cases": 2634,
+     "per100k": 19.9,
+     "clearance": 76.5
+    },
+    "435*00": {
+     "cases": 3806,
+     "per100k": 28.7,
+     "clearance": 23.1
+    },
+    "****00": {
+     "cases": 145174,
+     "per100k": 1095.7,
+     "clearance": 43.5
+    },
+    "***100": {
+     "cases": 1593,
+     "per100k": 12.0,
+     "clearance": 66.5
+    },
+    "*10*00": {
+     "cases": 7449,
+     "per100k": 56.2,
+     "clearance": 36.1
+    },
+    "*26*00": {
+     "cases": 38394,
+     "per100k": 289.8,
+     "clearance": 92.1
+    },
+    "510000": {
+     "cases": 73603,
+     "per100k": 555.5,
+     "clearance": 65.9
+    }
+   },
+   "Berlin": {
+    "------": {
+     "cases": 502742,
+     "per100k": 13641.9,
+     "clearance": 44.9
+    },
+    "210000": {
+     "cases": 4823,
+     "per100k": 130.9,
+     "clearance": 44.5
+    },
+    "435*00": {
+     "cases": 10618,
+     "per100k": 288.1,
+     "clearance": 7.9
+    },
+    "****00": {
+     "cases": 203061,
+     "per100k": 5510.1,
+     "clearance": 21.1
+    },
+    "***100": {
+     "cases": 6054,
+     "per100k": 164.3,
+     "clearance": 13.4
+    },
+    "*10*00": {
+     "cases": 2417,
+     "per100k": 65.6,
+     "clearance": 14.1
+    },
+    "*26*00": {
+     "cases": 32280,
+     "per100k": 875.9,
+     "clearance": 85.1
+    },
+    "510000": {
+     "cases": 61514,
+     "per100k": 1669.2,
+     "clearance": 42.7
+    }
+   },
+   "Brandenburg": {
+    "------": {
+     "cases": 166508,
+     "per100k": 6512.5,
+     "clearance": 57.7
+    },
+    "210000": {
+     "cases": 1130,
+     "per100k": 44.2,
+     "clearance": 67.2
+    },
+    "435*00": {
+     "cases": 3164,
+     "per100k": 123.8,
+     "clearance": 15.2
+    },
+    "****00": {
+     "cases": 50612,
+     "per100k": 1979.5,
+     "clearance": 26.8
+    },
+    "***100": {
+     "cases": 1724,
+     "per100k": 67.4,
+     "clearance": 21.4
+    },
+    "*10*00": {
+     "cases": 2229,
+     "per100k": 87.2,
+     "clearance": 18.8
+    },
+    "*26*00": {
+     "cases": 8603,
+     "per100k": 336.5,
+     "clearance": 81.3
+    },
+    "510000": {
+     "cases": 12115,
+     "per100k": 473.8,
+     "clearance": 69.9
+    }
+   },
+   "Bremen": {
+    "------": {
+     "cases": 94402,
+     "per100k": 13392.6,
+     "clearance": 48.6
+    },
+    "210000": {
+     "cases": 1175,
+     "per100k": 166.7,
+     "clearance": 50.6
+    },
+    "435*00": {
+     "cases": 1277,
+     "per100k": 181.2,
+     "clearance": 12.8
+    },
+    "****00": {
+     "cases": 42484,
+     "per100k": 6027.1,
+     "clearance": 30.3
+    },
+    "***100": {
+     "cases": 474,
+     "per100k": 67.2,
+     "clearance": 16.5
+    },
+    "*10*00": {
+     "cases": 2140,
+     "per100k": 303.6,
+     "clearance": 10.8
+    },
+    "*26*00": {
+     "cases": 10000,
+     "per100k": 1418.7,
+     "clearance": 88.7
+    },
+    "510000": {
+     "cases": 11786,
+     "per100k": 1672.1,
+     "clearance": 39.7
+    }
+   },
+   "Hamburg": {
+    "------": {
+     "cases": 213596,
+     "per100k": 11467.8,
+     "clearance": 49.1
+    },
+    "210000": {
+     "cases": 2152,
+     "per100k": 115.5,
+     "clearance": 48.5
+    },
+    "435*00": {
+     "cases": 2837,
+     "per100k": 152.3,
+     "clearance": 7.4
+    },
+    "****00": {
+     "cases": 83515,
+     "per100k": 4483.9,
+     "clearance": 25.1
+    },
+    "***100": {
+     "cases": 1124,
+     "per100k": 60.3,
+     "clearance": 10.7
+    },
+    "*10*00": {
+     "cases": 1377,
+     "per100k": 73.9,
+     "clearance": 15.5
+    },
+    "*26*00": {
+     "cases": 17149,
+     "per100k": 920.7,
+     "clearance": 88.8
+    },
+    "510000": {
+     "cases": 28711,
+     "per100k": 1541.5,
+     "clearance": 44.8
+    }
+   },
+   "Hessen": {
+    "------": {
+     "cases": 376981,
+     "per100k": 6002.1,
+     "clearance": 61.1
+    },
+    "210000": {
+     "cases": 3012,
+     "per100k": 48.0,
+     "clearance": 63.6
+    },
+    "435*00": {
+     "cases": 6777,
+     "per100k": 107.9,
+     "clearance": 15.2
+    },
+    "****00": {
+     "cases": 118814,
+     "per100k": 1891.7,
+     "clearance": 35.0
+    },
+    "***100": {
+     "cases": 1348,
+     "per100k": 21.5,
+     "clearance": 39.3
+    },
+    "*10*00": {
+     "cases": 6547,
+     "per100k": 104.2,
+     "clearance": 24.0
+    },
+    "*26*00": {
+     "cases": 27263,
+     "per100k": 434.1,
+     "clearance": 90.6
+    },
+    "510000": {
+     "cases": 52486,
+     "per100k": 835.7,
+     "clearance": 62.9
+    }
+   },
+   "Mecklenburg-Vorpommern": {
+    "------": {
+     "cases": 103901,
+     "per100k": 6602.8,
+     "clearance": 63.3
+    },
+    "210000": {
+     "cases": 530,
+     "per100k": 33.7,
+     "clearance": 74.3
+    },
+    "435*00": {
+     "cases": 933,
+     "per100k": 59.3,
+     "clearance": 24.4
+    },
+    "****00": {
+     "cases": 27535,
+     "per100k": 1749.8,
+     "clearance": 36.5
+    },
+    "***100": {
+     "cases": 218,
+     "per100k": 13.9,
+     "clearance": 39.9
+    },
+    "*10*00": {
+     "cases": 1027,
+     "per100k": 65.3,
+     "clearance": 25.7
+    },
+    "*26*00": {
+     "cases": 6295,
+     "per100k": 400.0,
+     "clearance": 88.8
+    },
+    "510000": {
+     "cases": 9416,
+     "per100k": 598.4,
+     "clearance": 76.5
+    }
+   },
+   "Niedersachsen": {
+    "------": {
+     "cases": 506634,
+     "per100k": 6329.4,
+     "clearance": 62.7
+    },
+    "210000": {
+     "cases": 3773,
+     "per100k": 47.1,
+     "clearance": 68.7
+    },
+    "435*00": {
+     "cases": 7985,
+     "per100k": 99.8,
+     "clearance": 18.0
+    },
+    "****00": {
+     "cases": 156725,
+     "per100k": 1958.0,
+     "clearance": 36.3
+    },
+    "***100": {
+     "cases": 1930,
+     "per100k": 24.1,
+     "clearance": 39.9
+    },
+    "*10*00": {
+     "cases": 8968,
+     "per100k": 112.0,
+     "clearance": 24.9
+    },
+    "*26*00": {
+     "cases": 35810,
+     "per100k": 447.4,
+     "clearance": 87.8
+    },
+    "510000": {
+     "cases": 68074,
+     "per100k": 850.4,
+     "clearance": 66.7
+    }
+   },
+   "Nordrhein-Westfalen": {
+    "------": {
+     "cases": 1356972,
+     "per100k": 7524.3,
+     "clearance": 53.7
+    },
+    "210000": {
+     "cases": 10953,
+     "per100k": 60.7,
+     "clearance": 60.0
+    },
+    "435*00": {
+     "cases": 27530,
+     "per100k": 152.7,
+     "clearance": 11.9
+    },
+    "****00": {
+     "cases": 499866,
+     "per100k": 2771.7,
+     "clearance": 27.9
+    },
+    "***100": {
+     "cases": 6892,
+     "per100k": 38.2,
+     "clearance": 26.8
+    },
+    "*10*00": {
+     "cases": 15409,
+     "per100k": 85.4,
+     "clearance": 19.1
+    },
+    "*26*00": {
+     "cases": 91569,
+     "per100k": 507.7,
+     "clearance": 90.2
+    },
+    "510000": {
+     "cases": 174233,
+     "per100k": 966.1,
+     "clearance": 58.3
+    }
+   },
+   "Rheinland-Pfalz": {
+    "------": {
+     "cases": 224126,
+     "per100k": 5427.3,
+     "clearance": 64.8
+    },
+    "210000": {
+     "cases": 1113,
+     "per100k": 27.0,
+     "clearance": 71.3
+    },
+    "435*00": {
+     "cases": 2936,
+     "per100k": 71.1,
+     "clearance": 13.6
+    },
+    "****00": {
+     "cases": 59508,
+     "per100k": 1441.0,
+     "clearance": 35.1
+    },
+    "***100": {
+     "cases": 987,
+     "per100k": 23.9,
+     "clearance": 48.0
+    },
+    "*10*00": {
+     "cases": 3213,
+     "per100k": 77.8,
+     "clearance": 21.2
+    },
+    "*26*00": {
+     "cases": 12416,
+     "per100k": 300.7,
+     "clearance": 86.9
+    },
+    "510000": {
+     "cases": 23573,
+     "per100k": 570.8,
+     "clearance": 68.6
+    }
+   },
+   "Saarland": {
+    "------": {
+     "cases": 66372,
+     "per100k": 6557.6,
+     "clearance": 62.3
+    },
+    "210000": {
+     "cases": 438,
+     "per100k": 43.3,
+     "clearance": 65.5
+    },
+    "435*00": {
+     "cases": 1163,
+     "per100k": 114.9,
+     "clearance": 16.1
+    },
+    "****00": {
+     "cases": 20243,
+     "per100k": 2000.0,
+     "clearance": 35.5
+    },
+    "***100": {
+     "cases": 338,
+     "per100k": 33.4,
+     "clearance": 41.7
+    },
+    "*10*00": {
+     "cases": 1136,
+     "per100k": 112.2,
+     "clearance": 17.9
+    },
+    "*26*00": {
+     "cases": 4927,
+     "per100k": 486.8,
+     "clearance": 89.1
+    },
+    "510000": {
+     "cases": 5223,
+     "per100k": 516.0,
+     "clearance": 70.8
+    }
+   },
+   "Sachsen": {
+    "------": {
+     "cases": 269050,
+     "per100k": 6655.7,
+     "clearance": 59.1
+    },
+    "210000": {
+     "cases": 1978,
+     "per100k": 48.9,
+     "clearance": 69.8
+    },
+    "435*00": {
+     "cases": 2460,
+     "per100k": 60.9,
+     "clearance": 24.1
+    },
+    "****00": {
+     "cases": 88902,
+     "per100k": 2199.2,
+     "clearance": 37.8
+    },
+    "***100": {
+     "cases": 1350,
+     "per100k": 33.4,
+     "clearance": 40.8
+    },
+    "*10*00": {
+     "cases": 3520,
+     "per100k": 87.1,
+     "clearance": 28.4
+    },
+    "*26*00": {
+     "cases": 20797,
+     "per100k": 514.5,
+     "clearance": 93.1
+    },
+    "510000": {
+     "cases": 30176,
+     "per100k": 746.5,
+     "clearance": 65.1
+    }
+   },
+   "Sachsen-Anhalt": {
+    "------": {
+     "cases": 172776,
+     "per100k": 8090.3,
+     "clearance": 57.4
+    },
+    "210000": {
+     "cases": 1105,
+     "per100k": 51.7,
+     "clearance": 67.1
+    },
+    "435*00": {
+     "cases": 2129,
+     "per100k": 99.7,
+     "clearance": 15.5
+    },
+    "****00": {
+     "cases": 56649,
+     "per100k": 2652.6,
+     "clearance": 29.2
+    },
+    "***100": {
+     "cases": 727,
+     "per100k": 34.0,
+     "clearance": 24.5
+    },
+    "*10*00": {
+     "cases": 2538,
+     "per100k": 118.8,
+     "clearance": 18.3
+    },
+    "*26*00": {
+     "cases": 11214,
+     "per100k": 525.1,
+     "clearance": 87.6
+    },
+    "510000": {
+     "cases": 16874,
+     "per100k": 790.1,
+     "clearance": 67.5
+    }
+   },
+   "Schleswig-Holstein": {
+    "------": {
+     "cases": 178922,
+     "per100k": 6045.6,
+     "clearance": 56.7
+    },
+    "210000": {
+     "cases": 1195,
+     "per100k": 40.4,
+     "clearance": 65.9
+    },
+    "435*00": {
+     "cases": 2486,
+     "per100k": 84.0,
+     "clearance": 14.5
+    },
+    "****00": {
+     "cases": 62522,
+     "per100k": 2112.6,
+     "clearance": 34.3
+    },
+    "***100": {
+     "cases": 679,
+     "per100k": 22.9,
+     "clearance": 35.3
+    },
+    "*10*00": {
+     "cases": 3101,
+     "per100k": 104.8,
+     "clearance": 19.6
+    },
+    "*26*00": {
+     "cases": 15976,
+     "per100k": 539.8,
+     "clearance": 88.8
+    },
+    "510000": {
+     "cases": 17745,
+     "per100k": 599.6,
+     "clearance": 56.9
+    }
+   },
+   "Thüringen": {
+    "------": {
+     "cases": 145167,
+     "per100k": 6911.8,
+     "clearance": 61.2
+    },
+    "210000": {
+     "cases": 827,
+     "per100k": 39.4,
+     "clearance": 75.3
+    },
+    "435*00": {
+     "cases": 975,
+     "per100k": 46.4,
+     "clearance": 24.4
+    },
+    "****00": {
+     "cases": 39342,
+     "per100k": 1873.2,
+     "clearance": 41.3
+    },
+    "***100": {
+     "cases": 617,
+     "per100k": 29.4,
+     "clearance": 48.5
+    },
+    "*10*00": {
+     "cases": 2418,
+     "per100k": 115.1,
+     "clearance": 23.4
+    },
+    "*26*00": {
+     "cases": 10191,
+     "per100k": 485.2,
+     "clearance": 88.9
+    },
+    "510000": {
+     "cases": 19611,
+     "per100k": 933.7,
+     "clearance": 53.0
+    }
+   }
+  },
+  "national_row": {
+   "------": {
+    "cases": 5508559,
+    "per100k": 6591.0,
+    "clearance": 57.9
+   },
+   "210000": {
+    "cases": 40119,
+    "per100k": 48.0,
+    "clearance": 62.4
+   },
+   "435*00": {
+    "cases": 82920,
+    "per100k": 99.2,
+    "clearance": 14.1
+   },
+   "****00": {
+    "cases": 1813141,
+    "per100k": 2169.4,
+    "clearance": 31.9
+   },
+   "***100": {
+    "cases": 27632,
+    "per100k": 33.1,
+    "clearance": 30.1
+   },
+   "*10*00": {
+    "cases": 68845,
+    "per100k": 82.4,
+    "clearance": 23.0
+   },
+   "*26*00": {
+    "cases": 383096,
+    "per100k": 458.4,
+    "clearance": 89.4
+   },
+   "510000": {
+    "cases": 681354,
+    "per100k": 815.2,
+    "clearance": 60.0
+   }
+  }
+ },
+ "limits": [
+  "BKA counts to German recording rules. These figures are not comparable with the Eurostat series on this page and are never joined to it.",
+  "Police-recorded offences are a floor, not a total. Retail loss that is written off rather than reported never enters this statistic.",
+  "A clearance rate is the share of cases the police closed with a suspect, not the share of loss recovered.",
+  "Shoplifting clearance is high because the offence is usually recorded at the moment someone is caught. A high rate here is a recording artefact, not police performance.",
+  "Haeufigkeitszahl is per 100,000 inhabitants. City states carry commuter and visitor crime against a resident denominator, so Berlin, Hamburg and Bremen read high by construction.",
+  "The population basis changed to the 2022 census from the 2024 reporting year, which shifts every rate slightly against earlier years."
+ ]
+}

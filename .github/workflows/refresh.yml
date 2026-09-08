@@ -1,8 +1,10 @@
 name: refresh
 
-# Eurostat publishes this dataset roughly once a year, so a monthly check is
-# plenty. It commits only when the numbers actually move, which means a quiet
-# month leaves no commit and no noise in the history.
+# Eurostat publishes its series roughly once a year and BKA publishes the PKS
+# each March, so a monthly check is plenty. It commits only when the numbers
+# actually move, which means a quiet month leaves no commit and no noise in the
+# history. The two sources are fetched, built and verified separately and are
+# never merged - see tools/4_germany.py for why.
 on:
   schedule:
     - cron: '0 6 1 * *'
@@ -36,15 +38,26 @@ jobs:
       - name: Verify before publishing
         run: python tools/verify_data.py
 
+      - name: Pull the BKA tables
+        run: pip install openpyxl && python tools/3_bka_fetch.py
+
+      - name: Rebuild the Germany panel
+        run: python tools/4_germany.py | tee bka.log
+
+      - name: Verify the Germany panel before publishing
+        run: python tools/verify_germany.py
+
       - name: Commit only if the data moved
         run: |
-          if git diff --quiet -- data/crime.json; then
-            echo "Eurostat has not changed"
+          if git diff --quiet -- data/crime.json data/germany.json; then
+            echo "neither source has changed"
             exit 0
           fi
           ref=$(python -c "import json;print(json.load(open('data/crime.json'))['index_definition']['reference_year'])")
+          pks=$(python -c "import json;print(json.load(open('data/germany.json'))['meta']['reporting_year'])")
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/crime.json
-          git commit -m "Refresh from Eurostat (reference year $ref)" -m "$(cat build.log)"
+          git add data/crime.json data/germany.json
+          git commit -m "Refresh sources (Eurostat reference year $ref, PKS $pks)" \
+                     -m "$(cat build.log)" -m "$(cat bka.log)"
           git push

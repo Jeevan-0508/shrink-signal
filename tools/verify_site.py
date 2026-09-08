@@ -26,6 +26,8 @@ def ck(name, cond, extra=""):
 async def main():
     with open(os.path.join(HERE, "data", "crime.json"), encoding="utf-8") as f:
         d = json.load(f)
+    with open(os.path.join(HERE, "data", "germany.json"), encoding="utf-8") as f:
+        de_data = json.load(f)
 
     async with async_playwright() as pw:
         b = await pw.chromium.launch(executable_path=CHROME, args=ARGS)
@@ -69,7 +71,7 @@ async def main():
         charts = await pg.evaluate(
             "() => [...document.querySelectorAll('canvas')].map(c => "
             "  ({id: c.id, bars: (Chart.getChart(c) || {}).data ? Chart.getChart(c).data.datasets.length : 0}))")
-        ck("all three charts rendered", len(charts) == 3 and all(c["bars"] > 0 for c in charts), charts)
+        ck("all four charts rendered", len(charts) == 4 and all(c["bars"] > 0 for c in charts), charts)
 
         # The bar chart must show only countries that actually reported, never a
         # zero standing in for a missing country.
@@ -95,6 +97,74 @@ async def main():
         ck("sorting by trend re-ranks the table on the dataset's trend",
            after != before and after == want,
            before[:3] + [" -> "] + after[:3])
+
+        # ---------------- the Germany panel, which reads a second source ---------
+        gm = de_data["meta"]
+        prov = await pg.eval_on_selector("#bkaprov", "e=>e.textContent")
+        ck("the Germany panel names BKA and both file versions",
+           gm["source"] in prov and all(v in prov for v in gm["versions"].values()), prov[:90])
+        gcite = await pg.eval_on_selector("#bkacite", "e=>e.textContent")
+        ck("BKA's reuse condition is in the footer", gm["reuse_terms"][:40] in gcite)
+
+        glimits = await pg.eval_on_selector_all("#bkalimits li", "e=>e.length")
+        ck("every Germany limitation is on the page",
+           glimits == len(de_data["limits"]), glimits)
+
+        # The panel's default category is the one Eurostat has no code for, and the
+        # table must be the dataset's own values in the dataset's own order.
+        shop = "*26*00"
+        table = await pg.evaluate(
+            "() => [...document.querySelectorAll('#bkabody tr')].map("
+            "  r => [r.children[1].textContent.trim(), r.children[2].textContent.trim()])")
+        want = sorted(((n, de_data["laender"]["values"][n][shop]["per100k"])
+                       for n in de_data["laender"]["order"]), key=lambda x: -x[1])
+        # Compared as numbers, not as strings: the browser drops a trailing zero
+        # that Python keeps, and that difference is formatting, not drift.
+        shown = [float(r[1].replace(",", "")) for r in table]
+        ck("the Bundesland table is the dataset, ranked by rate",
+           [r[0] for r in table] == [w[0] for w in want]
+           and shown == [w[1] for w in want], table[:2])
+
+        foot = await pg.evaluate(
+            "() => [...document.querySelectorAll('#bkafoot tr td')].map(t => t.textContent.trim())")
+        nat = de_data["laender"]["national_row"][shop]
+        ck("the national row is shown as a total, not as a seventeenth Bundesland",
+           len(table) == 16 and float(foot[2].replace(",", "")) == nat["per100k"], foot)
+
+        # Nothing may cross between the two sources. BKA has the reporting year
+        # Eurostat does not, so its presence on a chart is the test.
+        crossed = await pg.evaluate("""(year) => {
+          const out = {};
+          for (const c of document.querySelectorAll('canvas')) {
+            const ch = Chart.getChart(c);
+            out[c.id] = ch ? ch.data.labels.map(String).includes(year) : null;
+          }
+          return out;
+        }""", str(gm["reporting_year"]))
+        ck("only the BKA chart carries the BKA reporting year",
+           crossed.get("bkatrend") is True
+           and not any(v for k, v in crossed.items() if k != "bkatrend"), crossed)
+
+        gseries = de_data["national"][shop]
+        gchart = await pg.evaluate("""() => {
+          const c = Chart.getChart(document.getElementById('bkatrend'));
+          return {n: c.data.datasets.length, last: c.data.datasets.map(s => s.data[s.data.length - 1]),
+                  years: c.data.labels.length};
+        }""")
+        ck("the Germany chart plots the rate and the clearance rate from the dataset",
+           gchart["n"] == 2 and gchart["years"] == len(gseries)
+           and gchart["last"] == [gseries[-1]["per100k"], gseries[-1]["clearance"]], gchart)
+
+        await pg.select_option("#bkacat", "510000")
+        await pg.wait_for_timeout(400)
+        switched = await pg.evaluate(
+            "() => [...document.querySelectorAll('#bkabody tr')].map(r => r.children[1].textContent.trim())")
+        fraud = sorted(((n, de_data["laender"]["values"][n]["510000"]["per100k"])
+                        for n in de_data["laender"]["order"]), key=lambda x: -x[1])
+        ck("changing the offence re-ranks the Bundeslaender",
+           switched == [w[0] for w in fraud] and switched != [r[0] for r in table], switched[:3])
+        await pg.select_option("#bkacat", shop)
+        await pg.wait_for_timeout(400)
 
         # Back to the default order first, so the documentation screenshot shows
         # the page as a reader first meets it.
