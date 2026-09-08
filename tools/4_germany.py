@@ -160,7 +160,7 @@ def main():
             "reporting_year": latest,
             "publisher": "Bundeskriminalamt (BKA)",
             "landing_page": ("https://www.bka.de/DE/AktuelleInformationen/StatistikenLagebilder/"
-                             "PolizeilicheKriminalstatistik/PKS2025/pks2025_node.html"),
+                             "PolizeilicheKriminalstatistik/PKS%d/pks%d_node.html" % (latest, latest)),
             "reuse_terms": ("Use of the data, whole or in part, is permitted only with the source, "
                             "the reporting year and the file version cited "
                             "(Nutzungshinweis, bka.de)."),

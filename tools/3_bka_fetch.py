@@ -14,20 +14,23 @@ data/germany.json rather than being read once and forgotten.
 Writes data/raw/bka/*.xlsx, which 4_germany.py folds into data/germany.json.
 The raw files are kept out of git; the built dataset is the artefact.
 """
+import datetime
 import hashlib
 import os
+import urllib.error
 import urllib.request
 
 HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 RAW = os.path.join(HERE, "data", "raw", "bka")
-# BKA files the tables under the reporting year. A new PKS edition appears each
-# March and is the one line in this project that has to be changed by hand; the
-# version suffix BKA puts on its own links is left off, because the download
-# serves the current version without it.
-YEAR = 2025
+# BKA files the tables under the reporting year and publishes a new edition each
+# March. The edition this project was built against is pinned as a floor, and the
+# newer ones are discovered, so a monthly refresh moves on by itself instead of
+# quietly serving a year-old panel. The version suffix BKA puts on its own links
+# is left off, because the download serves the current version without it.
+PINNED_YEAR = 2025
 
 BASE = ("https://www.bka.de/SharedDocs/Downloads/DE/Publikationen/"
-        "PolizeilicheKriminalstatistik/%d" % YEAR)
+        "PolizeilicheKriminalstatistik/%d")
 
 # A desktop user agent is required; the default urllib one is refused.
 UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
@@ -40,10 +43,36 @@ FILES = [
 ]
 
 
+def serves(year):
+    """Whether BKA is already serving the national time series for this edition."""
+    req = urllib.request.Request((BASE % year) + "/" + FILES[0][1],
+                                 headers={"User-Agent": UA})
+    try:
+        with urllib.request.urlopen(req, timeout=60) as r:
+            return r.status == 200 and r.read(2)[:2] == b"PK"
+    except (urllib.error.HTTPError, urllib.error.URLError, OSError):
+        return False
+
+
+def latest_year():
+    """The newest edition BKA actually serves, never older than the pinned one.
+
+    Probing upwards rather than trusting the calendar means the March gap, when
+    the new edition is announced before the tables appear, does not break the
+    refresh; and a temporary 404 upstream cannot silently downgrade the panel.
+    """
+    year = PINNED_YEAR
+    while year < datetime.date.today().year and serves(year + 1):
+        year += 1
+    return year
+
+
 def main():
     os.makedirs(RAW, exist_ok=True)
+    year = latest_year()
+    print("PKS edition %d%s" % (year, "" if year == PINNED_YEAR else " (newer than the pinned %d)" % PINNED_YEAR))
     for name, path in FILES:
-        req = urllib.request.Request(BASE + "/" + path, headers={"User-Agent": UA})
+        req = urllib.request.Request((BASE % year) + "/" + path, headers={"User-Agent": UA})
         with urllib.request.urlopen(req, timeout=180) as r:
             body = r.read()
         with open(os.path.join(RAW, name), "wb") as f:

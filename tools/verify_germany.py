@@ -133,6 +133,11 @@ ck("the limits say the city states read high by construction",
 ck("the limits say the population basis changed", "census" in blob)
 ck("the limits say recorded offences are a floor", "floor" in blob)
 
+# The edition is discovered rather than pinned, so the citation BKA requires has
+# to follow the data instead of being a string that was right once.
+ck("the landing page cites the reporting year that was actually built",
+   str(meta["reporting_year"]) in meta["landing_page"], meta["landing_page"])
+
 print()
 if fails:
     print("FAILURES:", len(fails), fails)
