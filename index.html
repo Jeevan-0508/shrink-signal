@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shrink Signal — where loss pressure sits in Europe</title>
+<meta name="description" content="A loss-prevention reading of Eurostat police-recorded crime: eight offence categories, 41 countries, ranked into a defensible priority order with its limits stated.">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23020617'/%3E%3Cpath d='M7 22 L13 13 L19 18 L25 8' stroke='%2338bdf8' stroke-width='3' fill='none'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-slate-950 text-slate-200 antialiased">
+
+<header class="border-b border-slate-800">
+  <div class="mx-auto max-w-6xl px-5 py-8">
+    <p class="text-xs uppercase tracking-[0.2em] text-sky-400">Loss prevention · Europe</p>
+    <h1 class="mt-2 text-3xl sm:text-4xl font-semibold text-white">Shrink Signal</h1>
+    <p class="mt-3 max-w-3xl text-slate-400">
+      Eight Eurostat offence categories across 41 countries, turned into a priority
+      order you can defend in a room. It measures <strong class="text-slate-200">recorded
+      crime pressure on a market</strong> — not retail shrink, and not loss. That
+      distinction is the whole point, so it is stated here rather than buried.
+    </p>
+    <p id="prov" class="mt-4 text-xs text-slate-500"></p>
+  </div>
+</header>
+
+<main class="mx-auto max-w-6xl px-5 py-8 space-y-10">
+
+  <section class="rounded-lg border border-amber-500/30 bg-amber-500/5 p-5">
+    <h2 class="text-sm font-semibold uppercase tracking-wider text-amber-400">Read this before the charts</h2>
+    <ul id="limits" class="mt-3 space-y-2 text-sm text-slate-300 list-disc pl-5"></ul>
+  </section>
+
+  <section>
+    <div class="flex flex-wrap items-end justify-between gap-3">
+      <div>
+        <h2 class="text-xl font-semibold text-white">Loss Pressure Index</h2>
+        <p id="idxsub" class="text-sm text-slate-400"></p>
+      </div>
+      <div class="flex gap-2 text-xs">
+        <button data-sort="score" class="sortbtn rounded bg-sky-500/15 px-3 py-1.5 text-sky-300">Index</button>
+        <button data-sort="pressure" class="sortbtn rounded bg-slate-800 px-3 py-1.5 text-slate-300">Pressure</button>
+        <button data-sort="trend" class="sortbtn rounded bg-slate-800 px-3 py-1.5 text-slate-300">Trend</button>
+        <button data-sort="coverage" class="sortbtn rounded bg-slate-800 px-3 py-1.5 text-slate-300">Confidence</button>
+      </div>
+    </div>
+    <div class="mt-4 overflow-x-auto rounded-lg border border-slate-800">
+      <table class="w-full text-sm">
+        <thead class="bg-slate-900/70 text-left text-xs uppercase tracking-wider text-slate-400">
+          <tr>
+            <th class="px-4 py-3">#</th>
+            <th class="px-4 py-3">Country</th>
+            <th class="px-4 py-3 text-right">Index</th>
+            <th class="px-4 py-3 text-right">Pressure</th>
+            <th class="px-4 py-3 text-right">5-year trend</th>
+            <th class="px-4 py-3 text-center">Confidence</th>
+            <th class="px-4 py-3 text-right">Categories</th>
+          </tr>
+        </thead>
+        <tbody id="idxbody" class="divide-y divide-slate-800"></tbody>
+      </table>
+    </div>
+    <p class="mt-3 text-xs text-slate-500">
+      Pressure is the country's percentile against the other reporting countries in
+      the reference year, averaged over the categories it actually reports. Trend is
+      the median change across those categories over the window. Confidence is
+      reporting completeness, not accuracy — a grade A country can still record
+      crime differently from its neighbour.
+    </p>
+  </section>
+
+  <section>
+    <div class="flex flex-wrap items-end justify-between gap-3">
+      <h2 class="text-xl font-semibold text-white">Ranked by category</h2>
+      <div class="flex flex-wrap gap-2">
+        <select id="cat" class="rounded border border-slate-700 bg-slate-900 px-3 py-1.5 text-sm"></select>
+        <select id="year" class="rounded border border-slate-700 bg-slate-900 px-3 py-1.5 text-sm"></select>
+      </div>
+    </div>
+    <p id="catnote" class="mt-2 text-sm text-slate-400"></p>
+    <div class="mt-4 rounded-lg border border-slate-800 bg-slate-900/40 p-4">
+      <canvas id="bars" height="150"></canvas>
+    </div>
+    <p class="mt-2 text-xs text-slate-500">Offences per 100,000 inhabitants, as published by Eurostat. Countries that did not report this category in this year are absent, not zero.</p>
+  </section>
+
+  <section>
+    <h2 class="text-xl font-semibold text-white">Germany, category by category</h2>
+    <p class="mt-2 text-sm text-slate-400">
+      Within one country the recording practice is broadly constant, which makes the
+      trend the sounder reading. Each line is indexed to its own first available
+      year, so categories of very different size can share an axis.
+    </p>
+    <div class="mt-4 rounded-lg border border-slate-800 bg-slate-900/40 p-4">
+      <canvas id="detrend" height="140"></canvas>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="text-xl font-semibold text-white">Germany against its neighbours</h2>
+    <p id="peernote" class="mt-2 text-sm text-slate-400"></p>
+    <div class="mt-4 rounded-lg border border-slate-800 bg-slate-900/40 p-4">
+      <canvas id="peers" height="140"></canvas>
+    </div>
+  </section>
+
+  <section class="rounded-lg border border-slate-800 bg-slate-900/40 p-5">
+    <h2 class="text-lg font-semibold text-white">How the index is built</h2>
+    <div id="howto" class="mt-3 space-y-2 text-sm text-slate-300"></div>
+  </section>
+
+</main>
+
+<footer class="border-t border-slate-800">
+  <div class="mx-auto max-w-6xl px-5 py-8 text-xs text-slate-500 space-y-1">
+    <p id="cite"></p>
+    <p>Built by Jeevan Siddhabhaktula. Source and build scripts: <a class="text-sky-400" href="https://github.com/Jeevan-0508/shrink-signal">github.com/Jeevan-0508/shrink-signal</a></p>
+  </div>
+</footer>
+
+<script src="app.js" type="module"></script>
+</body>
+</html>

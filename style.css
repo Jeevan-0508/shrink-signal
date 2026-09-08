@@ -1,0 +1,12 @@
+/* Tailwind from the CDN carries the layout. This file holds only what a utility
+   class cannot express. */
+html { scroll-behavior: smooth; }
+
+table tbody tr:hover { background: rgba(148, 163, 184, 0.06); }
+
+canvas { max-width: 100%; }
+
+/* A long country list on a phone would otherwise squeeze the bars to nothing. */
+@media (max-width: 640px) {
+  #bars { min-height: 340px; }
+}
