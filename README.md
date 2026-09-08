@@ -81,6 +81,26 @@ recorded theft rose from 1,235 to 1,377 per 100,000 between 2019 and 2024, while
 recorded fraud fell from 1,003 to 894. A single national number would have hidden
 both, which is why the per-category view exists.
 
+## Why the latest year is 2024, and how it stays current
+
+Eurostat publishes this dataset about once a year and runs roughly a year and a
+half behind: the release of **2026-04-29** is the one that added **2024**. Asked
+directly for 2025, the API returns a valid response with **zero observations** —
+the year does not exist yet rather than being missing from this build. On that
+cadence 2025 should appear in spring 2027.
+
+For Germany alone, national 2025 figures do exist earlier, in the BKA's
+Polizeiliche Kriminalstatistik. They are deliberately not mixed in here: BKA
+counts to German rules and Eurostat harmonises across borders, so splicing them
+into one line would put a definition change in the middle of a trend and invite
+exactly the misreading the caveats warn about.
+
+A monthly GitHub Action (`.github/workflows/refresh.yml`) re-pulls the API,
+rebuilds the dataset, runs the verifier, and **commits only if the numbers
+actually moved**. So a quiet month leaves no commit, and the day Eurostat adds
+2025 the page picks it up on its own — including a new reference year, since that
+is derived from the data rather than hard-coded.
+
 ## Reproducing it
 
 ```bash

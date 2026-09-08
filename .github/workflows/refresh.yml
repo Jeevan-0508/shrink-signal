@@ -1,0 +1,50 @@
+name: refresh
+
+# Eurostat publishes this dataset roughly once a year, so a monthly check is
+# plenty. It commits only when the numbers actually move, which means a quiet
+# month leaves no commit and no noise in the history.
+on:
+  schedule:
+    - cron: '0 6 1 * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Pull the Eurostat series
+        run: python tools/1_fetch.py
+
+      - name: Rebuild the dataset and the index
+        run: python tools/2_dataset.py | tee build.log
+
+      # The dataset is not allowed to reach the page unless it still matches the
+      # raw response and the index still equals its own published formula.
+      - name: Verify before publishing
+        run: python tools/verify_data.py
+
+      - name: Commit only if the data moved
+        run: |
+          if git diff --quiet -- data/crime.json; then
+            echo "Eurostat has not changed"
+            exit 0
+          fi
+          ref=$(python -c "import json;print(json.load(open('data/crime.json'))['index_definition']['reference_year'])")
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/crime.json
+          git commit -m "Refresh from Eurostat (reference year $ref)" -m "$(cat build.log)"
+          git push
