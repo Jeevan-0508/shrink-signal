@@ -1,6 +1,40 @@
 <p align="center"><img src="assets/jk-brand-banner.png" alt="Jeevan Siddhabhaktula — Risk. Governance. AI." width="280"></p>
 
-# Shrink Signal
+<div align="center">
+
+```
+███████╗██╗  ██╗██████╗ ██╗███╗   ██╗██╗  ██╗    ███████╗██╗ ██████╗ ███╗   ██╗ █████╗ ██╗     
+██╔════╝██║  ██║██╔══██╗██║████╗  ██║██║ ██╔╝    ██╔════╝██║██╔════╝ ████╗  ██║██╔══██╗██║     
+███████╗███████║██████╔╝██║██╔██╗ ██║█████╔╝     ███████╗██║██║  ███╗██╔██╗ ██║███████║██║     
+╚════██║██╔══██║██╔══██╗██║██║╚██╗██║██╔═██╗     ╚════██║██║██║   ██║██║╚██╗██║██╔══██║██║     
+███████║██║  ██║██║  ██║██║██║ ╚████║██║  ██╗    ███████║██║╚██████╔╝██║ ╚████║██║  ██║███████╗
+╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝    ╚══════╝╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝  ╚═╝╚══════╝
+                                                                                               
+```
+
+### A LOSS-PREVENTION READING OF EUROPEAN CRIME DATA
+
+*Eight offence categories, 41 countries, 2008–2024 — plus Germany to 2025 by Bundesland*
+
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Tailwind](https://img.shields.io/badge/Tailwind-CDN-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)
+![Chart.js](https://img.shields.io/badge/Chart.js-4.4-ff6384?style=for-the-badge&logo=chartdotjs&logoColor=white)
+![Eurostat](https://img.shields.io/badge/Sources-Eurostat_%2B_BKA-38bdf8?style=for-the-badge)
+![Pages](https://img.shields.io/badge/GitHub%20Pages-LIVE-22c55e?style=for-the-badge&logo=github)
+![MIT](https://img.shields.io/badge/Licence-MIT-38bdf8?style=for-the-badge)
+
+<table>
+<tr><td align="center">📊</td><td align="center">🧭</td><td align="center">🇩🇪</td><td align="center">🔁</td></tr>
+<tr>
+<td align="center"><a href="https://jeevan-0508.github.io/shrink-signal/"><b>LIVE PANELS</b></a></td>
+<td align="center"><a href="#what-it-measures-and-what-it-does-not"><b>WHAT IT MEASURES</b></a></td>
+<td align="center"><a href="#germany-from-the-national-statistic"><b>GERMANY</b></a></td>
+<td align="center"><a href="#reproducing-it"><b>REPRODUCE IT</b></a></td>
+</tr>
+<tr><td align="center">Explore it</td><td align="center">And what it does not</td><td align="center">BKA, to 2025</td><td align="center">Run the pipeline</td></tr>
+</table>
+
+</div>
 
 A loss-prevention reading of European police-recorded crime. Eight Eurostat
 offence categories, 41 countries, 2008 to 2024, folded into a priority order you
