@@ -36,6 +36,8 @@
 
 </div>
 
+<p align="center"><a href="docs/getting-started.md">Getting started</a> · <a href="docs/quality-review.md">Quality review</a></p>
+
 A loss-prevention reading of European police-recorded crime. Eight Eurostat
 offence categories, 41 countries, 2008 to 2024, folded into a priority order you
 can defend in a room — with the reasons it might be wrong printed above the
